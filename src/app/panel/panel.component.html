@@ -1,0 +1,12 @@
+<div
+    #header
+    class="panel-header"
+    [class.closed]="state === 'closed'"
+    [style.backgroundColor]="backgroundColor"
+    >
+
+    <div class='panel' (click)="toggle()">
+        <div class='title'>{{title}}</div>
+    </div>
+</div>
+<div #content class="panel-content"><ng-content></ng-content></div>

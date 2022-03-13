@@ -1,0 +1,11 @@
+<div class = 'container'>
+    <img class='home-image' src="../../assets/optimization.png">
+<div class=items *ngFor="let item of package">
+    <img src="{{ item.image }}" />
+    <div [routerLink]="item.link" class='title'>{{item.title}}</div>
+    <div class='description'> {{item.description}}</div>
+    <div class="info">
+        <i class="fas fa-layer-group"></i> {{ item.contents.length }} items
+    </div>
+</div>
+</div>

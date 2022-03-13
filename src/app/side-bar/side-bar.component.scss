@@ -1,0 +1,42 @@
+:host {
+  display: block;
+  width:280px;
+  color: white;
+  background-color: #4b4b4e;
+  box-shadow: 1px -10px 10px -2px #6e6868ba
+}
+.search {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 140px;
+  width: 280px;
+  background-color: #3a789e;
+  .logo{
+    position: absolute;
+    top: 20%;
+    font-size: 16px;
+    font-weight:bold;
+  }
+  .search-input {
+    position: absolute;
+    width: 85%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    top: 70%;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.title {
+  width: fit-content;
+  color: #c6d7e2;
+  text-shadow: 2px 2px #212629;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 0px 10px 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
