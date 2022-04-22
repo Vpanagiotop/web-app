@@ -1,0 +1,25 @@
+:host {
+  display: block;
+}
+.label {
+  padding: 5px;
+  color: black;
+  font-size: 16px;
+  padding-bottom: 8px;
+  font-weight: bold;
+}
+
+app-select-options {
+  margin: 0px 12px 15px 12px;
+}
+input {
+  margin: 0px 12px 15px 12px;
+  padding: 0px 4px;
+  height: 25px;
+  width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  &:focus {
+    outline: none;
+  }
+}

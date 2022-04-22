@@ -1,22 +1,22 @@
 :host {
   display: block;
-  width:280px;
+  width: 280px;
   color: white;
   background-color: #4b4b4e;
-  box-shadow: 1px -10px 10px -2px #6e6868ba
+  box-shadow: 1px -10px 10px -2px #6e6868ba;
 }
 .search {
   position: relative;
   display: flex;
   justify-content: center;
-  height: 140px;
+  height: 150px;
   width: 280px;
   background-color: #3a789e;
-  .logo{
+  .logo {
     position: absolute;
     top: 20%;
     font-size: 16px;
-    font-weight:bold;
+    font-weight: bold;
   }
   .search-input {
     position: absolute;
@@ -36,7 +36,31 @@
   text-shadow: 2px 2px #212629;
   font-weight: bold;
   font-size: 20px;
-  padding: 10px 0px 10px 5px;
+  padding: 20px 0px 10px 5px;
   text-decoration: none;
   cursor: pointer;
+}
+
+.items {
+  display: block;
+  width: 100%;
+  margin-bottom: 3px;
+  border-bottom: 1px solid #ffffff3b;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.contents {
+  font-size: 15px;
+  font-weight: normal;
+  border-top: 1px solid #ffffff3b;
+  cursor: default;
+}
+.contents-items {
+  width: fit-content;
+  padding: 5px 15px;
+  cursor: pointer;
+  :hover {
+    color: #a6bfce;
+  }
 }

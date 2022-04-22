@@ -1,0 +1,10 @@
+<select
+  class="input"
+  [(ngModel)]="value"
+  (ngModelChange)="valueChange.emit(value)"
+  [style.height]="height"
+  [style.width]="width"
+>
+  <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+</select>
+<div class="placeholder" *ngIf="!value">{{ placeholder }}</div>

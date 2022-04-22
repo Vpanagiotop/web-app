@@ -1,0 +1,211 @@
+<!-- <app-concrete-options></app-concrete-options>
+<app-add-new-material></app-add-new-material> -->
+<app-viewport title="{{ title }}">
+  <app-title-box title="Section Properties:">
+    <div class="contents">
+      <div class="left-content">
+        <app-title-box
+          title="Dimensions"
+          [(value)]="sectionType"
+          [options]="sectionOptions"
+        >
+          <app-input-options
+            label="Section height:"
+            type="number"
+            [(value)]="hb"
+            (ngModelChange)="(hb)"
+            placeholder="hb [m]"
+            width="140px"
+          ></app-input-options>
+          <app-input-options
+            label="Section width:"
+            type="number"
+            [(value)]="bw"
+            (ngModelChange)="(bw)"
+            placeholder="bw [m]"
+            width="140px"
+          ></app-input-options>
+          <div *ngIf="sectionType === 'Wide flanges'">
+            <app-input-options
+              label="Left flange width:"
+              type="number"
+              [(value)]="beffLeft"
+              (ngModelChange)="(beffLeft)"
+              placeholder="beff,l [m]"
+              width="140px"
+            ></app-input-options>
+            <app-input-options
+              label="Right flange width:"
+              type="number"
+              [(value)]="beffRight"
+              (ngModelChange)="(beffRight)"
+              placeholder="beff,r [m]"
+              width="140px"
+            ></app-input-options>
+            <app-input-options
+              label="Effective flange:"
+              type="fixed"
+              [value]="beff()"
+              width="140px"
+            ></app-input-options>
+          </div>
+        </app-title-box>
+        <app-title-box title="Cover" [(value)]="cover" [options]="coverOptions">
+          <div *ngIf="cover === 'Nominal cover'">
+            <app-input-options
+              label="Nominal cover:"
+              type="number"
+              [(value)]="cnom"
+              (ngModelChange)="(cnom)"
+              placeholder="cnom [m]"
+              width="140px"
+            ></app-input-options>
+            <app-input-options
+              label="Diameter of Reinforcing Bar:"
+              type="select"
+              [(value)]="reinforcingBar"
+              [options]="rebarOptions"
+              width="140px"
+            ></app-input-options>
+            <app-input-options
+              label="Diameter of Shear Reinfocement:"
+              type="select"
+              [(value)]="shearReinforcement"
+              [options]="rebarOptions"
+              width="140px"
+            ></app-input-options>
+          </div>
+          <div *ngIf="cover === 'Reinfocement cover'">
+            <app-input-options
+              label="Reinfocement cover:"
+              type="number"
+              [(value)]="cnom"
+              (ngModelChange)="(cnom)"
+              placeholder="cL [m]"
+              width="140px"
+            ></app-input-options>
+            <app-input-options
+              label="Diameter of Reinforcing Bar:"
+              type="select"
+              [(value)]="reinforcingBar"
+              [options]="rebarOptions"
+              width="140px"
+            ></app-input-options>
+          </div>
+        </app-title-box>
+      </div>
+      <div class="right-content">
+        <app-title-box>
+          <img src="../../assets/concrete.png" />
+        </app-title-box>
+      </div>
+    </div>
+  </app-title-box>
+</app-viewport>
+
+<app-viewport title="{{ title }}">
+  <app-title-box title="Section Properties">
+    <div class="content">
+      <div class="input">
+        <div class="label">Section height:</div>
+        <app-input-options
+          type="number"
+          [(value)]="hb"
+          (ngModelChange)="(hb)"
+          placeholder="hb [m]"
+          width="140px"
+        ></app-input-options>
+      </div>
+      <div class="input">
+        <div class="label">Section width:</div>
+        <app-input-options
+          type="number"
+          [(value)]="bw"
+          (ngModelChange)="(bw)"
+          placeholder="bw [m]"
+          width="140px"
+        ></app-input-options>
+      </div>
+      <div class="box">
+        <app-title-box title="Cover:">
+          <ng-container *ngIf="cover === 'Nominal cover'">
+            <div class="box-input">
+              <div class="label">Nominal Cover:</div>
+              <app-input-options
+                type="number"
+                [(value)]="cnom"
+                (ngModelChange)="(cnom)"
+                placeholder="cnom [m]"
+                width="100px"
+              ></app-input-options>
+            </div>
+            <div class="box-input">
+              <div class="label">Diameter of Reinforcing Bar:</div>
+              <app-select-options
+                [(value)]="reinforcingBar"
+                [options]="rebarOptions"
+                width="100px"
+              ></app-select-options>
+            </div>
+            <div class="box-input">
+              <div class="label">Diameter of Shear Reinfocement:</div>
+              <app-select-options
+                [(value)]="shearReinforcement"
+                [options]="rebarOptions"
+                width="100px"
+              ></app-select-options>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="cover === 'Reinfocement cover'">
+            <div class="box-input">
+              <div class="label">Reinfocement Cover:</div>
+              <app-input-options
+                type="number"
+                [(value)]="cnom"
+                (ngModelChange)="(cnom)"
+                placeholder="cnom [m]"
+                width="100px"
+              ></app-input-options>
+            </div>
+            <div class="box-input">
+              <div class="label">Diameter of Reinforcing Bar:</div>
+              <app-select-options
+                [(value)]="reinforcingBar"
+                [options]="rebarOptions"
+                width="100px"
+              ></app-select-options>
+            </div>
+          </ng-container>
+        </app-title-box>
+        <div class="select">
+          <app-select-options
+            [(value)]="cover"
+            [options]="coverOptions"
+          ></app-select-options>
+        </div>
+      </div>
+      <div class="box">
+        <app-title-box title="Material">
+          <div class="box-input">
+            <div class="label">Concrete:</div>
+            +
+            <app-select-options
+              [(value)]="fck"
+              [options]="concreteOptions"
+              width="140px"
+            ></app-select-options>
+          </div>
+          <div class="box-input">
+            <div class="label">Steel:</div>
+            +
+            <app-select-options
+              [(value)]="fyk"
+              [options]="steelOptions"
+              width="140px"
+            ></app-select-options>
+          </div>
+        </app-title-box>
+      </div>
+    </div>
+  </app-title-box>
+</app-viewport>

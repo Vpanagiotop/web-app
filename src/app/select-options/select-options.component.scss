@@ -1,0 +1,28 @@
+:host {
+  position: relative;
+  display: block;
+}
+.input {
+  width: 100%;
+  display: list-item;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  &:focus {
+    outline: none;
+  }
+}
+.placeholder {
+  font-weight: normal;
+  color: gray;
+  font-size: 14px;
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  padding: 0px 10px;
+  pointer-events: none;
+}
+select {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}

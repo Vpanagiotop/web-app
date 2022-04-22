@@ -1,0 +1,13 @@
+<div [style.width]="width">
+  <div class="header">
+    <div>{{ title }}</div>
+    <div class="close">x</div>
+  </div>
+  <div class="menu" [style.width]="width">
+    <div #content><ng-content></ng-content></div>
+    <div class="assign">
+      <div class="button">ok</div>
+      <div class="button">Cancel</div>
+    </div>
+  </div>
+</div>

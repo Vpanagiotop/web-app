@@ -1,0 +1,41 @@
+:host {
+  display: block;
+}
+.items {
+  position: relative;
+  display: block;
+  margin-bottom: 3px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #3a789e;
+  box-shadow: 0px 0.5px 2px 0px #6e6868ba;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0px 0.5px 5px 0px #4d4c4cba;
+  }
+  .info {
+    position: absolute;
+    left: 15px;
+    top: 40px;
+    color: #5e5858;
+    font-size: 12px;
+    font-weight: normal;
+  }
+}
+.contents {
+  padding: 0px 10px;
+  color: black;
+  font-size: 16px;
+  font-weight: normal;
+  background-color: #ffffff7a;
+  border-top: 1px solid #00000014;
+  cursor: default;
+}
+.contents-items {
+  width: fit-content;
+  padding: 10px 0px;
+  cursor: pointer;
+  :hover {
+    color: #3a789e;
+  }
+}

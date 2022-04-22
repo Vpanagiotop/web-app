@@ -1,0 +1,13 @@
+<app-popup-form title="Add new material" width="400px">
+  <div class="label">Material Type</div>
+  <app-select-options [(value)]="material" [options]="materialList">
+  </app-select-options>
+  <div class="label">Eurocode Standard</div>
+  <app-select-options
+    [(value)]="value"
+    (valueChange)="materialChoice()"
+    [options]="materialChoice()"
+  ></app-select-options>
+  <div class="label">Material Name</div>
+  <input type="text" (valueChange)="valueChange()" [value]="value" />
+</app-popup-form>

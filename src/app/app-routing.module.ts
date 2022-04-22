@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { OptimizationContentsComponent } from './app-packages/Optimization-folder/optimization-contents/optimization-contents.component';
-import { OptimizationComponent } from './app-packages/Optimization-folder/optimization/optimization.component';
-import { RCContentsComponent } from './app-packages/ReinforcedConcrete/rc-contents/rc-contents.component';
-import { ReinforcedConcreteComponent } from './app-packages/ReinforcedConcrete/reinforced-concrete/reinforced-concrete.component';
-import { ApplicationsComponent } from './pages/applications/applications.component';
+import { ApplicationsComponent } from './applications/applications/applications.component';
+import { OptimizationContentsComponent } from './applications/optimization/optimization-contents/optimization-contents.component';
+import { OptimizationViewportComponent } from './applications/optimization/optimization-viewport/optimization-viewport.component';
+import { FlexuralDesignRCBeamComponent } from './applications/reinforced-concrete/cross-section-analysis/flexural-design-rc-beam/flexural-design-rc-beam.component';
+import { SpreadFootingComponent } from './applications/reinforced-concrete/foundation/spread-footing/spread-footing.component';
+import { ReinforcedConcreteContentsComponent } from './applications/reinforced-concrete/reinforced-concrete-contents/reinforced-concrete-contents.component';
+import { ReinforcedConcreteViewportComponent } from './applications/reinforced-concrete/reinforced-concrete-viewport/reinforced-concrete-viewport.component';
 import { HomeComponent } from './pages/home/home.component';
 const routes: Routes = [
   {
@@ -25,17 +27,19 @@ const routes: Routes = [
   {
     path: 'home', component: HomeComponent,
     children: [
-      { path: 'RC', component: ReinforcedConcreteComponent }
+      { path: 'RC', component: ReinforcedConcreteContentsComponent }
     ]
   },
   { path: 'applications', component: ApplicationsComponent },
   {
-    path: 'applications/RC', component: ReinforcedConcreteComponent,
+    path: 'applications/RC', component: ReinforcedConcreteViewportComponent,
     children: [
-      { path: 'contents', component: RCContentsComponent }]
+      { path: 'contents', component: ReinforcedConcreteContentsComponent },
+      { path: 'flexural-design-RC-beam', component: FlexuralDesignRCBeamComponent },
+      { path: 'SpreadFooting', component: SpreadFootingComponent },]
   },
   {
-    path: 'applications/optimization', component: OptimizationComponent,
+    path: 'applications/optimization', component: OptimizationViewportComponent,
     children: [
       { path: 'contents', component: OptimizationContentsComponent }]
   },

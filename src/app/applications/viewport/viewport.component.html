@@ -1,0 +1,11 @@
+<div class="breadcrumbs">Test</div>
+<div class="headline">
+  <img src="../../../assets/Structural.png" width="100%" />
+  <div class="description">
+    <div class="title">{{ title }}</div>
+    <div class="info" *ngIf="items">
+      <i class="fas fa-layer-group"></i> {{ items.length }} items
+    </div>
+  </div>
+</div>
+<div #content class="contents"><ng-content></ng-content></div>

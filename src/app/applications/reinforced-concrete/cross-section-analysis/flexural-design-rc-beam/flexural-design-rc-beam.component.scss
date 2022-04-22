@@ -1,0 +1,57 @@
+.content {
+  padding: 0px 10px;
+  background-color: inherit;
+}
+.contents {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px;
+  background-color: inherit;
+  .left-content,
+  .right-content {
+    background-color: inherit;
+    width: 50%;
+    padding: 0px 10px;
+    img {
+      height: 100%;
+      width: 50%;
+    }
+  }
+}
+app-input-options {
+  padding: 5px;
+}
+app-title-box {
+  padding-right: 10px;
+}
+.input {
+  display: flex;
+  align-items: center;
+  width: 350px;
+  padding: 5px 0px;
+  background-color: inherit;
+}
+.label {
+  width: 300px;
+  text-align: left;
+}
+.box {
+  padding: 15px 0px;
+  position: relative;
+  background-color: inherit;
+  width: 350px;
+  .select {
+    width: 140px;
+    padding: 0px 5px;
+    position: absolute;
+    top: 5px;
+    right: -4px;
+    margin-left: 2px;
+  }
+  .box-input {
+    display: flex;
+    align-items: center;
+    padding: 5px 5px;
+  }
+}

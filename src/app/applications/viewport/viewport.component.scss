@@ -1,0 +1,41 @@
+:host {
+  display: block;
+  width: 100%;
+  min-width: 280px;
+}
+
+.breadcrumbs {
+  font-size: 17px;
+  color: #76a0b9;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgb(68, 64, 64);
+}
+.headline {
+  background-color: #ebeef1;
+  display: flex;
+  padding: 10px 0px;
+  font-size: 22px;
+  img {
+    width: 90px;
+    height: 100%;
+  }
+  .description {
+    display: block;
+    position: relative;
+    padding: 10px 10px;
+    .title {
+      display: block;
+    }
+    .info {
+      position: absolute;
+      bottom: 0px;
+      color: #5e5858;
+      font-size: 14px;
+    }
+  }
+}
+.contents {
+  display: block;
+  background-color: #ebeef1;
+  padding: 20px;
+}

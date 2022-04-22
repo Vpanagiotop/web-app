@@ -1,19 +1,30 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ApplicationsComponent } from './applications/applications/applications.component';
+import { ContentsComponent } from './applications/contents/contents.component';
+import { AddNewMaterialComponent } from './applications/materials/add-new-material/add-new-material.component';
+import { ConcreteOptionsComponent } from './applications/materials/concrete-options/concrete-options.component';
+import { OptimizationContentsComponent } from './applications/optimization/optimization-contents/optimization-contents.component';
+import { OptimizationViewportComponent } from './applications/optimization/optimization-viewport/optimization-viewport.component';
+import { CoverComponent } from './applications/reinforced-concrete/common/cover/cover.component';
+import { FlexuralDesignRCBeamComponent } from './applications/reinforced-concrete/cross-section-analysis/flexural-design-rc-beam/flexural-design-rc-beam.component';
+import { SpreadFootingComponent } from './applications/reinforced-concrete/foundation/spread-footing/spread-footing.component';
+import { ReinforcedConcreteContentsComponent } from './applications/reinforced-concrete/reinforced-concrete-contents/reinforced-concrete-contents.component';
+import { ReinforcedConcreteViewportComponent } from './applications/reinforced-concrete/reinforced-concrete-viewport/reinforced-concrete-viewport.component';
+import { ViewportComponent } from './applications/viewport/viewport.component';
+import { InputOptionsComponent } from './input-options/input-options.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { ApplicationsComponent } from './pages/applications/applications.component';
-import { ReinforcedConcreteComponent } from './app-packages/ReinforcedConcrete/reinforced-concrete/reinforced-concrete.component';
-import { SideBarComponent } from './side-bar/side-bar.component';
-import { ContentsComponent } from './app-packages/contents/contents.component';
-import { OptimizationComponent } from './app-packages/Optimization-folder/optimization/optimization.component';
+import { HomeComponent } from './pages/home/home.component';
 import { PanelComponent } from './panel/panel.component';
-import { RCContentsComponent } from './app-packages/ReinforcedConcrete/rc-contents/rc-contents.component';
-import { OptimizationContentsComponent } from './app-packages/Optimization-folder/optimization-contents/optimization-contents.component';
+import { PopupFormComponent } from './popup-form/popup-form.component';
+import { SelectOptionsComponent } from './select-options/select-options.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { TitleBoxComponent } from './title-box/title-box.component';
+
 
 @NgModule({
   declarations: [
@@ -22,17 +33,29 @@ import { OptimizationContentsComponent } from './app-packages/Optimization-folde
     HomeComponent,
     ContactComponent,
     ApplicationsComponent,
-    ReinforcedConcreteComponent,
+    ReinforcedConcreteViewportComponent,
     SideBarComponent,
     ContentsComponent,
-    OptimizationComponent,
     PanelComponent,
-    RCContentsComponent,
     OptimizationContentsComponent,
+    SpreadFootingComponent,
+    ReinforcedConcreteContentsComponent,
+    OptimizationViewportComponent,
+    ViewportComponent,
+    ConcreteOptionsComponent,
+    SelectOptionsComponent,
+    AddNewMaterialComponent,
+    PopupFormComponent,
+    InputOptionsComponent,
+    TitleBoxComponent,
+    FlexuralDesignRCBeamComponent,
+    CoverComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

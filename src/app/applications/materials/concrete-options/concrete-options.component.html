@@ -1,0 +1,127 @@
+<app-popup-form title="Material Properties" width="500px">
+  <div class="header">
+    <div class="image">
+      <img src="../../assets/concrete.png" />
+    </div>
+    <div class="title">
+      <div>{{ Name }}</div>
+      <div class="modified">Modified: Wednesday, 13 April 2021 - 14:30</div>
+    </div>
+  </div>
+  <!-- <div class="panel" *ngFor="let item of concreteProperties">
+    <app-panel [state]="'open'" title="{{ item.title }}" padding="0px">
+      <div class="parameter" *ngFor="let contents of item.contents">
+        <div class="label">{{ contents.title }}</div>
+        <div class="fixed" *ngIf="contents.class == 'fixed'">
+          {{ contents.value }}
+        </div>
+        <app-input-options
+          *ngIf="contents.class == 'input'"
+          (valueChange)="MeanCompresiveStrength()"
+          [type]="contents.type"
+          [(value)]="contents.value"
+        ></app-input-options>
+        <app-select-options
+          *ngIf="contents.class == 'select'"
+          [(value)]="contents.value"
+          [options]="contents.options"
+          height="20px"
+        ></app-select-options>
+      </div>
+    </app-panel>
+  </div> -->
+  <!--<div class="panel">
+    <app-panel title="General:" [state]="'open'" padding="0px">
+      <div class="parameter">
+        <div class="label">Material Type:</div>
+        <div class="fixed">Concrete</div>
+        <div class="label">Material Name:</div> -->
+  <!-- <app-input-options type="text" [(value)]="Name"></app-input-options>
+        <div class="label">Units:</div> -->
+  <!-- <app-select-options
+          [(value)]="units"
+          [options]="unitsOptions"
+          height="20px"
+        ></app-select-options> 
+      </div>
+    </app-panel>
+  </div>-->
+  <!-- <div class="panel">
+    <app-panel title="Properties:" [state]="'open'" padding="0px">
+      <div class="parameter">
+        <div class="label">Compresive Strength of Concrete:</div>
+        <app-input-options
+          type="number"
+          [(value)]="fck"
+          placeholder="fck [kN/m{{ sup2 }}]"
+          >{{ MeanCompresiveStrength() }}</app-input-options
+        >
+        <div class="label">Mean Concrete Cylinder Compresive Strength:</div>
+        <app-input-options
+          type="number"
+          [(value)]="fcm"
+          (ngModelChange)="ModulusofElasticity()"
+          placeholder="fcm [kN/m{{ sup2 }}]"
+        ></app-input-options>
+        <div class="label">Modulus of Elasticity:</div>
+        <app-input-options
+          type="number"
+          [(value)]="Ecm"
+          placeholder="Ecm [kN/m{{ sup2 }}]"
+        ></app-input-options>
+        <div class="label">Poison:</div>
+        <app-input-options
+          type="number"
+          [(value)]="v"
+          placeholder="v"
+        ></app-input-options>
+        <div class="label">Shear Modulus:</div>
+        <div class="fixed">{{ ShearModulus() }}</div>
+        <div class="label">Weight per Unit Volume:</div>
+        <app-input-options
+          type="number"
+          placeholder="[kN/m{{ sup3 }}]"
+        ></app-input-options>
+      </div>
+    </app-panel>
+  </div>
+  <div class="panel">
+    <app-panel title="More Info:" [state]="'open'" padding="0px">
+      <div class="parameter">
+        <div class="label">Stress - strain relations:</div>
+        <app-select-options
+          [(value)]="stressStrain"
+          [options]="StressStrainOptions"
+          height="20px"
+        ></app-select-options>
+        <div class="label">Mean Concrete Cylinder Compresive Strength:</div>
+        <app-input-options
+          type="number"
+          [(value)]="fcm"
+          (ngModelChange)="MeanCompresiveStrength()"
+          placeholder="fcm [kN/m{{ sup2 }}]"
+        ></app-input-options>
+        <div class="label">εc:</div>
+        <app-input-options type="number" [(value)]="ec"></app-input-options>
+        <div class="label">Poison:</div>
+        <app-input-options
+          type="number"
+          [(value)]="v"
+          placeholder="v"
+        ></app-input-options>
+        <div class="label">Shear Modulus:</div>
+        <div class="fixed">{{ ShearModulus() }}</div>
+        <div class="label">Weight per Unit Volume:</div>
+        <app-input-options
+          type="number"
+          placeholder="[kN/m{{ sup3 }}]"
+        ></app-input-options>
+      </div>
+    </app-panel>
+  </div> -->
+  <div class="panel">
+    <app-panel title="Comments:" [state]="'closed'" padding="0px">
+      <div class="input"><textarea cols="5" rows="45"></textarea></div>
+    </app-panel>
+  </div>
+</app-popup-form>

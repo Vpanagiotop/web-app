@@ -1,15 +1,16 @@
-import { Component, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-panel',
   templateUrl: './panel.component.html',
   styleUrls: ['./panel.component.scss']
 })
-export class PanelComponent{
+export class PanelComponent {
   @Input() public title!: string;
   @Input() public state: 'open' | 'closed' = 'closed';
   @Input() public backgroundColor = 'None';
-  // @Input() public fontSize = '18px';
+  @Input() public height = 'auto';
+  @Input() public padding = '5px 10px';
   @ViewChild('header') public header!: ElementRef<HTMLDivElement>;
   @ViewChild('content') public content!: ElementRef<HTMLDivElement>;
   public constructor(private element: ElementRef<HTMLElement>) { }

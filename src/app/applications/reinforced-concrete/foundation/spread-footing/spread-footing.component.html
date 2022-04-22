@@ -1,0 +1,206 @@
+<!-- <app-add-new-material></app-add-new-material> -->
+<!-- <app-add-new-material></app-add-new-material>
+<app-concrete-options></app-concrete-options> -->
+<app-viewport title="{{ title }}">
+  <div class="test">
+    <app-title-box title="Dimentions">
+      <div class="input">
+        <div class="value-title">Section height:</div>
+        <div class="value">
+          <app-input-options
+            type="number"
+            [(value)]="hb"
+            (ngModelChange)="(hb)"
+            placeholder="hb [m]"
+          ></app-input-options>
+        </div>
+      </div>
+      <div class="input">
+        <div class="value-title">Section width:</div>
+        <div class="value">
+          <app-input-options
+            type="number"
+            [(value)]="bw"
+            (ngModelChange)="(bw)"
+            placeholder="bw [m]"
+          ></app-input-options>
+        </div>
+      </div>
+      <div class="input">
+        <div class="value-title">Cover:</div>
+        <div class="value">
+          <app-select-options [options]="coverOptions"></app-select-options>
+        </div>
+      </div>
+      <app-title-box title="test">
+        <div class="input">
+          <div class="value-title">Nominal cover:</div>
+          <div class="value">
+            <app-input-options
+              type="number"
+              [(value)]="cnom"
+              (ngModelChange)="(cnom)"
+              placeholder="cnom [m]"
+            ></app-input-options>
+          </div>
+        </div>
+      </app-title-box>
+    </app-title-box>
+  </div>
+  <app-title-box title="Dimentions">
+    <div class="input">
+      <div class="value-title">Section height:</div>
+      <div class="value">
+        <app-input-options
+          type="number"
+          [(value)]="hb"
+          (ngModelChange)="(hb)"
+          placeholder="hb [m]"
+        ></app-input-options>
+      </div>
+    </div>
+    <div class="input">
+      <div class="value-title">Section width:</div>
+      <div class="value">
+        <app-input-options
+          type="number"
+          [(value)]="bw"
+          (ngModelChange)="(bw)"
+          placeholder="bw [m]"
+        ></app-input-options>
+      </div>
+    </div>
+    <div class="input">
+      <div class="value-title">Cover:</div>
+      <div class="value">
+        <app-select-options [options]="coverOptions"></app-select-options>
+      </div>
+    </div>
+    <app-title-box title="test">
+      <div class="input">
+        <div class="value-title">Nominal cover:</div>
+        <div class="value">
+          <app-input-options
+            type="number"
+            [(value)]="cnom"
+            (ngModelChange)="(cnom)"
+            placeholder="cnom [m]"
+          ></app-input-options>
+        </div>
+      </div>
+    </app-title-box>
+  </app-title-box>
+  <div class="input-box">
+    <div class="title">Materials</div>
+    <div class="table">
+      <div class="headers">
+        <div class="value">Name</div>
+        <div class="value">Type</div>
+        <div class="value">Tag</div>
+      </div>
+      <div class="contents">
+        <div class="table-row">
+          <div class="value">Test</div>
+          <div class="value">Concrete</div>
+          <div class="value">1</div>
+        </div>
+        <div class="table-row">
+          <div class="value">Test</div>
+          <div class="value">Concrete</div>
+          <div class="value">2</div>
+        </div>
+        <div class="table-row">
+          <div class="value">Test</div>
+          <div class="value">Steel</div>
+          <div class="value">3</div>
+        </div>
+        <div class="table-row">
+          <div class="value">Test</div>
+          <div class="value">Concrete</div>
+          <div class="value">4</div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="button">+</div>
+        <div class="button">-</div>
+      </div>
+      <!-- <div class="table-title">Tag</div>
+      <div class="table-title">Tag</div>
+      <div class="table-title">Tag</div> -->
+    </div>
+    <!-- <div class="test2">+</div> -->
+  </div>
+  <div class="title">Section</div>
+  <div class="table">
+    <div class="inputs">
+      <div class="values">
+        <div class="value-title">Section height:</div>
+        <app-input-options
+          type="number"
+          [(value)]="hb"
+          (ngModelChange)="(hb)"
+          placeholder="hb [m]"
+        ></app-input-options>
+      </div>
+      <div class="values">
+        <div class="value-title">Section width:</div>
+        <app-input-options
+          type="number"
+          [(value)]="bw"
+          (ngModelChange)="(bw)"
+          placeholder="bw [m]"
+        ></app-input-options>
+      </div>
+      <div class="values">
+        <div class="value-title">Cover:</div>
+        <app-input-options
+          type="number"
+          [(value)]="cnom"
+          (ngModelChange)="(cnom)"
+          placeholder="cnom [m]"
+        ></app-input-options>
+      </div>
+    </div>
+    <div class="inputs">test</div>
+  </div>
+  Type of Analysis:
+  <app-select-options [options]="options"></app-select-options>
+  <!-- <div class="input">
+    test
+    <app-panel [state]="'open'" title="Materials" height="30px">
+      <div class="define-materials">
+        <div class="assign-material">
+          <div class="type">Concrete</div>
+          <div class="type2">| tag:2 fck:20MPa</div>
+        </div>
+        <div class="modify-material">Modify / Show</div>
+      </div>
+      <div class="add-new-material">
+        <div class="buttom">Add new material</div>
+      </div>
+    </app-panel>
+  </div> -->
+  <!-- <app-title-box title="Input"
+    >test
+    <app-input-options> </app-input-options>
+  </app-title-box>
+  <div>height</div>
+  <div>width</div>
+  <div>width</div>
+</app-viewport> -->
+  <!-- <div class="test">
+  <app-viewport>
+
+      <div class="define-materials">
+        <div class="assign-material">Test</div>
+        <div class="modify-material">Modify / Show</div>
+        <div class="modify-material">Modify / Show</div>
+      </div>
+      <div class="add-new-material">
+        <div class="buttom">Add new material</div>
+      </div>
+    </app-panel>
+  </div>
+</app-viewport>
+</div> -->
+</app-viewport>

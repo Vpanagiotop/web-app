@@ -1,0 +1,53 @@
+:host {
+  background-color: inherit;
+  width: 100%;
+}
+.box {
+  background-color: inherit;
+  border: #3c5a86 1px solid;
+  position: relative;
+  .select {
+    width: 140px;
+    padding: 0px 5px;
+    position: absolute;
+    top: -10px;
+    right: -0.5px;
+  }
+}
+
+.title {
+  width: fit-content;
+  background-color: inherit;
+  position: relative;
+  padding: 0px 5px;
+  top: -10px;
+  margin-left: 2px;
+  background-color: inherit;
+}
+.contents {
+  background-color: inherit;
+}
+.input {
+  width: 100%;
+  display: list-item;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  &:focus {
+    outline: none;
+  }
+}
+.placeholder {
+  font-weight: normal;
+  color: gray;
+  font-size: 14px;
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  padding: 0px 10px;
+  pointer-events: none;
+}
+select {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}

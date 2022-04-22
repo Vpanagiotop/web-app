@@ -1,8 +1,17 @@
 <div class="search">
-    <div [routerLink]="'/home'" class="logo">
-        <i class="material-icons">library_books</i>
-        Contents
-    </div>
-    <input class="search-input" placeholder="Search..." />
+  <div [routerLink]="'/home'" class="logo">
+    <i class="material-icons">library_books</i>
+    Contents
+  </div>
+  <input class="search-input" placeholder="Search..." />
 </div>
-<div class="title">{{title}}</div>
+<div class="title">{{ title }}</div>
+<div class="items" *ngFor="let item of items">
+  <app-panel [state]="'closed'" title="{{ item.title }}">
+    <div class="contents">
+      <div class="contents-items" *ngFor="let contents of item.contents">
+        <div>{{ contents.title }}</div>
+      </div>
+    </div>
+  </app-panel>
+</div>

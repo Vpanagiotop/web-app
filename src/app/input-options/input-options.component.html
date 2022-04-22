@@ -1,0 +1,31 @@
+<div class="labels" *ngIf="label">{{ label }}</div>
+<input
+  *ngIf="type != 'fixed' && type != 'select'"
+  type="{{ type }}"
+  placeholder="{{ placeholder }}"
+  [(ngModel)]="value"
+  (ngModelChange)="valueChange.emit(value)"
+  [style.height]="height"
+  [style.width]="width"
+/>
+<div
+  *ngIf="type === 'fixed'"
+  class="fixed"
+  [style.height]="height"
+  [style.width]="width"
+>
+  {{ value }}
+</div>
+<select
+  *ngIf="type === 'select'"
+  class="input"
+  [(ngModel)]="value"
+  (ngModelChange)="valueChange.emit(value)"
+  [style.height]="height"
+  [style.width]="width"
+>
+  <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+</select>
+<div class="placeholder" *ngIf="!value && type === 'select'">
+  {{ "--- select ---" }}
+</div>
