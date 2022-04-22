@@ -1,10 +1,5 @@
 <app-popup-form
-  (submit)="
-    submit.emit({
-      material: formData.material,
-      value: formData.value
-    })
-  "
+  (submit)="validateAndSubmit()"
   title="Add new material"
   width="400px"
 >
@@ -18,5 +13,5 @@
     [options]="materialChoice()"
   ></app-select-options>
   <div class="label">Material Name</div>
-  <input type="text" (valueChange)="valueChange()" [value]="formData.value" />
+  <input type="text" [value]="formData.value" />
 </app-popup-form>
