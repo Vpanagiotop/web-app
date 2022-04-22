@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IMaterialOutput } from 'src/app/applications/materials/add-new-material/add-new-material.component';
 import { concreteTypeList, steelTypeList } from '../../eurocodeStandard';
 @Component({
   selector: 'app-flexural-design-rc-beam',
@@ -26,6 +27,9 @@ export class FlexuralDesignRCBeamComponent {
   @Input() beffLeft!: number;
   @Input() beffRight!: number;
   public beff() {
-    return this.beffRight + this.beffLeft + this.bw;
+    return (+this.beffRight || 0) + (+this.beffLeft || 0) + (+this.bw || 0);
+  }
+  public saveValues(materialOutput: IMaterialOutput) {
+    console.log({ materialOutput });
   }
 }

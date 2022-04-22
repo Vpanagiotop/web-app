@@ -1,13 +1,22 @@
-<app-popup-form title="Add new material" width="400px">
+<app-popup-form
+  (submit)="
+    submit.emit({
+      material: formData.material,
+      value: formData.value
+    })
+  "
+  title="Add new material"
+  width="400px"
+>
   <div class="label">Material Type</div>
-  <app-select-options [(value)]="material" [options]="materialList">
+  <app-select-options [(value)]="formData.material" [options]="materialList">
   </app-select-options>
   <div class="label">Eurocode Standard</div>
   <app-select-options
-    [(value)]="value"
+    [(value)]="formData.value"
     (valueChange)="materialChoice()"
     [options]="materialChoice()"
   ></app-select-options>
   <div class="label">Material Name</div>
-  <input type="text" (valueChange)="valueChange()" [value]="value" />
+  <input type="text" (valueChange)="valueChange()" [value]="formData.value" />
 </app-popup-form>

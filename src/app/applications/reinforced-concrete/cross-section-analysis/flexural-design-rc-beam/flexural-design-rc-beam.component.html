@@ -1,5 +1,9 @@
-<!-- <app-concrete-options></app-concrete-options>
-<app-add-new-material></app-add-new-material> -->
+<!-- <app-concrete-options></app-concrete-options> -->
+<button (click)="addNewMaterialPopup.toggle()">Click Me</button>
+<app-add-new-material
+  #addNewMaterialPopup
+  (submit)="saveValues($event); addNewMaterialPopup.close()"
+></app-add-new-material>
 <app-viewport title="{{ title }}">
   <app-title-box title="Section Properties:">
     <div class="contents">
@@ -13,7 +17,6 @@
             label="Section height:"
             type="number"
             [(value)]="hb"
-            (ngModelChange)="(hb)"
             placeholder="hb [m]"
             width="140px"
           ></app-input-options>
@@ -21,7 +24,6 @@
             label="Section width:"
             type="number"
             [(value)]="bw"
-            (ngModelChange)="(bw)"
             placeholder="bw [m]"
             width="140px"
           ></app-input-options>
@@ -30,7 +32,6 @@
               label="Left flange width:"
               type="number"
               [(value)]="beffLeft"
-              (ngModelChange)="(beffLeft)"
               placeholder="beff,l [m]"
               width="140px"
             ></app-input-options>
@@ -38,7 +39,6 @@
               label="Right flange width:"
               type="number"
               [(value)]="beffRight"
-              (ngModelChange)="(beffRight)"
               placeholder="beff,r [m]"
               width="140px"
             ></app-input-options>
@@ -56,7 +56,6 @@
               label="Nominal cover:"
               type="number"
               [(value)]="cnom"
-              (ngModelChange)="(cnom)"
               placeholder="cnom [m]"
               width="140px"
             ></app-input-options>

@@ -7,7 +7,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class TitleBoxComponent {
   @Input() title!: string;
-  @Input() public placeholder = '--- select ---';
   @Input() public options!: string[];
   @Output() public valueChange = new EventEmitter<any>();
   @Input() public value!: any;
