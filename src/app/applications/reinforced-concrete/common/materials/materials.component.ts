@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { PopupFormComponent } from 'src/app/applications/common/popup-form/popup-form.component';
 import { AddNewMaterialComponent, IMaterialOutput } from 'src/app/applications/materials/add-new-material/add-new-material.component';
-import { PopupFormComponent } from 'src/app/popup-form/popup-form.component';
 import { concreteTypeProperties, IConcreteProperties } from '../../eurocodeStandard';
 
 @Component({

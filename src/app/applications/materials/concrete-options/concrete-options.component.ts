@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild } from '@angular/core';
-import { PopupFormComponent } from 'src/app/popup-form/popup-form.component';
+import { PopupFormComponent } from 'src/app/applications/common/popup-form/popup-form.component';
 import { IConcreteProperties } from '../../reinforced-concrete/eurocodeStandard';
 import { IMaterialOutput } from '../add-new-material/add-new-material.component';
 

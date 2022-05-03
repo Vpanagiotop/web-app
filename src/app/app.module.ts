@@ -6,6 +6,10 @@ import { DxoSelectionModule } from 'devextreme-angular/ui/nested';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ApplicationsComponent } from './applications/applications/applications.component';
+import { InputOptionsComponent } from './applications/common/input-options/input-options.component';
+import { PopupFormComponent } from './applications/common/popup-form/popup-form.component';
+import { SideBarComponent } from './applications/common/side-bar/side-bar.component';
+import { TitleBoxComponent } from './applications/common/title-box/title-box.component';
 import { ContentsComponent } from './applications/contents/contents.component';
 import { AddNewMaterialComponent } from './applications/materials/add-new-material/add-new-material.component';
 import { ConcreteOptionsComponent } from './applications/materials/concrete-options/concrete-options.component';
@@ -20,15 +24,11 @@ import { StripFoundationComponent } from './applications/reinforced-concrete/fou
 import { ReinforcedConcreteContentsComponent } from './applications/reinforced-concrete/reinforced-concrete-contents/reinforced-concrete-contents.component';
 import { ReinforcedConcreteViewportComponent } from './applications/reinforced-concrete/reinforced-concrete-viewport/reinforced-concrete-viewport.component';
 import { ViewportComponent } from './applications/viewport/viewport.component';
-import { InputOptionsComponent } from './input-options/input-options.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PanelComponent } from './panel/panel.component';
-import { PopupFormComponent } from './popup-form/popup-form.component';
 import { SelectOptionsComponent } from './select-options/select-options.component';
-import { SideBarComponent } from './side-bar/side-bar.component';
-import { TitleBoxComponent } from './title-box/title-box.component';
 
 
 @NgModule({

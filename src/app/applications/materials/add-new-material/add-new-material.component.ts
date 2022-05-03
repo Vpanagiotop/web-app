@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
-import { PopupFormComponent } from 'src/app/popup-form/popup-form.component';
+import { PopupFormComponent } from 'src/app/applications/common/popup-form/popup-form.component';
 import { ConcreteType, concreteTypes } from '../../reinforced-concrete/eurocodeStandard';
 
 @Component({
