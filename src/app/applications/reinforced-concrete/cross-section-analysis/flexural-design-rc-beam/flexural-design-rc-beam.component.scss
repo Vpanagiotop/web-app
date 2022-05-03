@@ -1,57 +1,109 @@
-.content {
-  padding: 0px 10px;
-  background-color: inherit;
-}
-.contents {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0px 10px;
-  background-color: inherit;
-  .left-content,
-  .right-content {
-    background-color: inherit;
-    width: 50%;
-    padding: 0px 10px;
-    img {
-      height: 100%;
-      width: 50%;
-    }
-  }
-}
-app-input-options {
-  padding: 5px;
-}
-app-title-box {
-  padding-right: 10px;
-}
-.input {
-  display: flex;
-  align-items: center;
-  width: 350px;
-  padding: 5px 0px;
-  background-color: inherit;
-}
-.label {
-  width: 300px;
-  text-align: left;
-}
-.box {
-  padding: 15px 0px;
-  position: relative;
-  background-color: inherit;
-  width: 350px;
-  .select {
-    width: 140px;
-    padding: 0px 5px;
-    position: absolute;
-    top: 5px;
-    right: -4px;
-    margin-left: 2px;
-  }
-  .box-input {
-    display: flex;
-    align-items: center;
-    padding: 5px 5px;
-  }
-}
+// .test {
+//   color: white;
+//   font-size: 18px;
+//   font-weight: bold;
+// }
+// .contents {
+//   font-weight: normal;
+//   font-size: 16px;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   background-color: #2a2a2a;
+//   min-width: fit-content;
+// }
+// .title {
+//   background-color: #424040;
+//   color: white;
+//   padding: 10px;
+//   font-size: 16px;
+// }
+// .input {
+//   width: 50%;
+//   padding: 5px;
+// }
+// .group-items {
+//   padding: 5px;
+// }
+
+// ::ng-deep .dx-texteditor-input {
+//   padding: 5px;
+//   min-height: fit-content;
+// }
+
+// .test-box {
+//   border: #3c5a86 1px solid;
+//   border: #3c5a86 2px solid;
+//   border-radius: 4px;
+//   background-color: #292b2d;
+//   color: #dedede;
+//   .header {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     padding: 10px;
+//     border-bottom: #3c5a86 1px solid;
+//   }
+//   .check {
+//     height: 30px;
+//     width: 50%;
+//     max-width: 200px;
+//   }
+// }
+// // .content {
+// //   padding: 0px 10px;
+// //   background-color: inherit;
+// // }
+// // .contents {
+// //   display: flex;
+// //   align-items: center;
+// //   justify-content: space-between;
+// //   padding: 0px 10px;
+// //   background-color: inherit;
+// //   .left-content,
+// //   .right-content {
+// //     background-color: inherit;
+// //     width: 50%;
+// //     padding: 0px 10px;
+// //     img {
+// //       height: 100%;
+// //       width: 50%;
+// //     }
+// //   }
+// // }
+// app-input-options {
+//   padding: 5px;
+// }
+// app-title-box {
+//   padding-right: 10px;
+// }
+// // .input {
+// //   display: flex;
+// //   align-items: center;
+// //   width: 350px;
+// //   padding: 5px 0px;
+// //   background-color: inherit;
+// // }
+// .label {
+//   width: 300px;
+//   text-align: left;
+// }
+// .box {
+//   padding: 15px 0px;
+//   position: relative;
+//   background-color: inherit;
+//   width: 350px;
+//   .select {
+//     width: 140px;
+//     padding: 0px 5px;
+//     position: absolute;
+//     top: 5px;
+//     right: -4px;
+//     margin-left: 2px;
+//   }
+//   .box-input {
+//     display: flex;
+//     align-items: center;
+//     padding: 5px 5px;
+//   }
+// }

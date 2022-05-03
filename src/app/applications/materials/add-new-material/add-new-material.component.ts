@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { PopupFormComponent } from 'src/app/popup-form/popup-form.component';
 import { ConcreteType, concreteTypes } from '../../reinforced-concrete/eurocodeStandard';
 
@@ -10,15 +10,18 @@ import { ConcreteType, concreteTypes } from '../../reinforced-concrete/eurocodeS
 export class AddNewMaterialComponent {
   @ViewChild(PopupFormComponent) public popupForm!: PopupFormComponent;
   @Output() public submit = new EventEmitter<IMaterialOutput>();
+  @Input() public type!: 'Concrete' | 'Steel'
   public formData = this.getFormDefaults();
   public materialList = ['Concrete', 'Steel']
   public concreteTypeList = concreteTypes;
   public steelTypeList = ['B500c', 'B500a', 'B500b', 'S220', 'S400', 'S500', 'S400s', 'S500s', 'other'];
   public materialChoice() {
-    if (this.formData.material === 'Concrete') {
+    if (this.formData.material === 'Concrete' || this.type === 'Concrete') {
+      this.formData.material = 'Concrete'
       return this.concreteTypeList;
     }
-    if (this.formData.material === 'Steel') {
+    if (this.formData.material === 'Steel' || this.type === 'Steel') {
+      this.formData.material = 'Steel'
       return this.steelTypeList;
     }
     else {
@@ -47,14 +50,13 @@ export class AddNewMaterialComponent {
     this.reset();
     this.popupForm.toggle();
   }
-  private reset() {
+  public reset() {
     this.formData = this.getFormDefaults();
   }
   private getFormDefaults(): Partial<IMaterialOutput> {
     return {}
   }
 }
-
 export interface IMaterialOutput {
   material: 'Concrete' | 'Steel' | '';
   value: ConcreteType;

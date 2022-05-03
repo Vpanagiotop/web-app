@@ -1,13 +1,38 @@
-<div *ngIf="isOpen" [style.width]="width">
-  <div class="header">
-    <div>{{ title }}</div>
-    <div class="close" (click)="close()">x</div>
+<div
+  #container
+  *ngIf="isOpen"
+  class="container"
+  (click)="$event.target === container && close()"
+>
+  <div class="form" [style.width]="width" *ngIf="type === 'input'">
+    <div class="header">
+      <div>{{ title }}</div>
+      <div class="close" (click)="close()">&times;</div>
+    </div>
+
+    <div class="menu">
+      <div #content class="contents"><ng-content></ng-content></div>
+      <div class="assign">
+        <dx-button height="25px" width="70px" (click)="submit.emit()">
+          OK
+        </dx-button>
+        <dx-button height="25px" width="70px" (click)="close()">
+          Cancel
+        </dx-button>
+      </div>
+    </div>
   </div>
-  <div class="menu" [style.width]="width">
-    <div #content><ng-content></ng-content></div>
-    <div class="assign">
-      <div class="button" (click)="submit.emit()">ok</div>
-      <div class="button" (click)="close()">Cancel</div>
+  <div class="form" [style.width]="width" *ngIf="type === 'delete'">
+    <div class="delete">
+      <div class="validation">{{ title }}</div>
+      <div class="assign">
+        <dx-button height="30px" width="100px" (click)="submit.emit()">
+          Yes
+        </dx-button>
+        <dx-button height="30px" width="100px" (click)="close()">
+          No
+        </dx-button>
+      </div>
     </div>
   </div>
 </div>

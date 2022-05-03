@@ -1,17 +1,41 @@
 <app-popup-form
   (submit)="validateAndSubmit()"
   title="Add new material"
-  width="400px"
+  width="500px"
 >
   <div class="label">Material Type</div>
-  <app-select-options [(value)]="formData.material" [options]="materialList">
-  </app-select-options>
+  <dx-select-box
+    *ngIf="type"
+    #selectBox
+    height="30px"
+    class="select"
+    [items]="materialList"
+    [(value)]="type"
+    [disabled]="true"
+  ></dx-select-box>
+  <dx-select-box
+    #selectBox
+    *ngIf="!type"
+    height="30px"
+    class="select"
+    [items]="materialList"
+    [(value)]="formData.material"
+  ></dx-select-box>
   <div class="label">Eurocode Standard</div>
-  <app-select-options
+  <dx-select-box
+    #selectBox
+    height="30px"
+    class="select"
+    [items]="materialChoice()"
     [(value)]="formData.value"
     (valueChange)="materialChoice()"
-    [options]="materialChoice()"
-  ></app-select-options>
+  >
+    <dxo-drop-down-options [height]="140"></dxo-drop-down-options>
+  </dx-select-box>
   <div class="label">Material Name</div>
-  <input type="text" [value]="formData.value" />
+  <dx-text-box
+    height="28px"
+    [value]="formData.value!"
+    [showClearButton]="true"
+  ></dx-text-box>
 </app-popup-form>

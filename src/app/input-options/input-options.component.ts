@@ -6,13 +6,31 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./input-options.component.scss']
 })
 export class InputOptionsComponent {
-  @Input() public type!: 'number' | 'text' | 'select' | 'fixed';
+  public currencyButton: any;
+  constructor() {
+    this.currencyButton = {
+      text: this.units,
+      stylingMode: 'text',
+      width: 40,
+      padding: 0,
+      elementAttr: {
+        class: 'currency',
+      }
+    }
+  }
+  @Input() public units: 'm' | 'mm' | 'kN' | 'MPa' = 'm'
+  @Input() public unitsOptions: string[] = ['m', 'mm'];
+  @Input() public type!: 'number' | 'text' | 'select' | 'fixed' | 'addButton';
   @Input() public placeholder = '';
   @Input() public label!: string;
-  @Input() public test!: string;
-  @Input() public value!: string | number;
+  @Input() public button!: string;
+  @Input() public text!: string;
+  @Input() public value!: number;
+  @Input() option!: number | string;
   @Output() public valueChange = new EventEmitter<any>();
+  @Output() public textChange = new EventEmitter<string>();
+  @Output() public optionChange = new EventEmitter<any>();
   @Input() public options!: string[];
-  @Input() public height = '20px';
+  @Input() public height = '25px';
   @Input() public width = '100%';
 }

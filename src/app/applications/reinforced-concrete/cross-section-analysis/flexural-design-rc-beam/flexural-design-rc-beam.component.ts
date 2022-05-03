@@ -18,9 +18,12 @@ export class FlexuralDesignRCBeamComponent {
   @Input() public fck!: string;
   @Input() public sectionType: 'Rectangular' | 'Wide flanges' = 'Rectangular';
   @Input() public fyk!: string;
+  // public currencyFormat: string;
+  public currencyButton: any;
+  public currencyFormat = '#0% ';
   @Input() public shearReinforcement: string = 'ø8'
   @Input() public cover: "Nominal cover" | "Reinfocement cover" = 'Nominal cover'
-  @Output() public coverChange = new EventEmitter<string>();
+  @Output() public sectionTypeChange = new EventEmitter<string>();
   @Input() hb!: number;
   @Input() bw!: number;
   @Input() cnom!: number;

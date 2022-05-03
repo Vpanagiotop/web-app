@@ -1,10 +1,46 @@
-<div [(ngModel)]="cnom" (ngModelChange)="cnomChange.emit(cnom)">
-  <app-input-options
-    label="Nominal cover:"
-    type="number"
-    [(value)]="cnom"
-    (ngModelChange)="(cnom)"
-    placeholder="cnom [m]"
-    width="140px"
-  ></app-input-options>
-</div>
+<app-title-box
+  title="Cover"
+  [(value)]="cover"
+  [options]="coverOptions"
+  minWidth="400px"
+>
+  <div *ngIf="cover === 'Nominal cover'">
+    <app-input-options
+      type="number"
+      [(value)]="cnom"
+      label="Nominal cover:"
+      width="{{ inputWidth }}"
+      placeholder="cnom"
+    ></app-input-options>
+    <app-input-options
+      type="select"
+      [(option)]="reinforcingBar"
+      [options]="rebarOptions"
+      label="Diameter of Reinforcing Bar:"
+      width="{{ inputWidth }}"
+    ></app-input-options>
+    <app-input-options
+      type="select"
+      [(option)]="shearReinforcement"
+      [options]="rebarOptions"
+      label="Diameter of Shear Reinfocement:"
+      width="{{ inputWidth }}"
+    ></app-input-options>
+  </div>
+  <div *ngIf="cover === 'Reinfocement cover'">
+    <app-input-options
+      type="number"
+      [(value)]="cnom"
+      label="Reinfocement cover:"
+      width="{{ inputWidth }}"
+      placeholder="cL"
+    ></app-input-options>
+    <app-input-options
+      type="select"
+      [(option)]="reinforcingBar"
+      [options]="rebarOptions"
+      label="Diameter of Reinforcing Bar:"
+      width="{{ inputWidth }}"
+    ></app-input-options>
+  </div>
+</app-title-box>

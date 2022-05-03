@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class PopupFormComponent {
   @Input() public title!: string;
+  @Input() public type: 'input' | 'delete' = 'input';
   @Input() public width = '350px';
   @Output() public submit = new EventEmitter();
   public isOpen = false;

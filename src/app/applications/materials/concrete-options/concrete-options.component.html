@@ -8,6 +8,81 @@
       <div class="modified">Modified: Wednesday, 13 April 2021 - 14:30</div>
     </div>
   </div>
+  <div class="tabs">
+    <dx-tab-panel height="350px">
+      <dxi-item title="General" icon="preferences">
+        <div class="items">
+          <app-input-options
+            label="Material Type"
+            type="fixed"
+            width="150px"
+            (click)="test()"
+          ></app-input-options>
+          <app-input-options
+            label="Material Name"
+            [(text)]="Name"
+            type="text"
+            width="150px"
+          ></app-input-options>
+          <app-input-options
+            type="fixed"
+            label="Weight per Unit Volume"
+            [(value)]="fck!"
+            width="150px"
+          ></app-input-options>
+          <app-input-options
+            type="fixed"
+            label="Weight per Unit Volume"
+            [(value)]="fck!"
+            width="150px"
+          ></app-input-options>
+          <app-input-options
+            type="select"
+            [options]="unitsOptions"
+            [(option)]="units"
+            label="Units:"
+            width="150px"
+            height="25px"
+          ></app-input-options>
+        </div>
+      </dxi-item>
+      <dxi-item title="Properties" icon="edit">
+        <div class="items">
+          <app-input-options
+            type="number"
+            label="Compresive Strength of Concrete"
+            [(value)]="fck"
+            width="150px"
+          ></app-input-options>
+          <app-input-options
+            type="number"
+            label="Mean Cylinder Compresive Strength"
+            [(value)]="data.properties.fcm"
+            width="150px"
+          ></app-input-options>
+          <app-input-options
+            type="number"
+            label="Modulus of Elasticity"
+            [(value)]="fck"
+            width="150px"
+          ></app-input-options>
+          <app-input-options
+            type="number"
+            label="Poison"
+            [(value)]="fck"
+            width="150px"
+          ></app-input-options>
+          <app-input-options
+            type="number"
+            label="Shear Modulus"
+            [(value)]="fck"
+            width="150px"
+          ></app-input-options>
+        </div>
+      </dxi-item>
+      <dxi-item title="Advanced" icon="edit"></dxi-item>
+    </dx-tab-panel>
+  </div>
   <!-- <div class="panel" *ngFor="let item of concreteProperties">
     <app-panel [state]="'open'" title="{{ item.title }}" padding="0px">
       <div class="parameter" *ngFor="let contents of item.contents">
@@ -119,9 +194,9 @@
       </div>
     </app-panel>
   </div> -->
-  <div class="panel">
+  <!-- <div class="panel">
     <app-panel title="Comments:" [state]="'closed'" padding="0px">
       <div class="input"><textarea cols="5" rows="45"></textarea></div>
     </app-panel>
-  </div>
+  </div> -->
 </app-popup-form>

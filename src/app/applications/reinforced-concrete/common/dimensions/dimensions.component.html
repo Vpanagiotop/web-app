@@ -1,0 +1,60 @@
+<app-title-box
+  title="Dimentions"
+  [(value)]="sectionType"
+  [options]="sectionOptions"
+  minWidth="400px"
+>
+  <div *ngIf="sectionType === 'Rectangular'">
+    <app-input-options
+      type="number"
+      [(value)]="hb"
+      label="Section height:"
+      width="{{ inputWidth }}"
+      placeholder="hb"
+    ></app-input-options>
+    <app-input-options
+      type="number"
+      [(value)]="bw"
+      label="Section width:"
+      width="{{ inputWidth }}"
+      placeholder="bw"
+    ></app-input-options>
+  </div>
+  <div *ngIf="sectionType === 'Wide flanges'">
+    <app-input-options
+      type="number"
+      [(value)]="hb"
+      label="Section height:"
+      width="{{ inputWidth }}"
+      placeholder="hb"
+    ></app-input-options>
+    <app-input-options
+      type="number"
+      [(value)]="bw"
+      label="Section width:"
+      width="{{ inputWidth }}"
+      placeholder="bw"
+    ></app-input-options>
+    <app-input-options
+      type="number"
+      [(value)]="beff_left"
+      label="Left flange width:"
+      width="{{ inputWidth }}"
+      placeholder="beff,l"
+    ></app-input-options>
+    <app-input-options
+      type="number"
+      [(value)]="beff_right"
+      label="Right flange width:"
+      width="{{ inputWidth }}"
+      placeholder="beff,r"
+    ></app-input-options>
+    <app-input-options
+      type="fixed"
+      [value]="beff()"
+      label="Effective flange:"
+      width="{{ inputWidth }}"
+      placeholder="beff"
+    ></app-input-options>
+  </div>
+</app-title-box>

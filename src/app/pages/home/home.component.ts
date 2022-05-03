@@ -9,4 +9,5 @@ export class HomeComponent {
 
   public title = 'Reinforced Concrete'
   public contents = reinforcedConcreteItems
+  public steelTypeList = ['B500c', 'B500a', 'B500b', 'S220', 'S400', 'S500', 'S400s', 'S500s', 'other'];
 }

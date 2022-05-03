@@ -1,25 +1,41 @@
-:host {
-  display: block;
+dx-select-box,
+dx-text-box {
+  margin: 10px;
 }
 .label {
-  padding: 5px;
-  color: black;
-  font-size: 16px;
-  padding-bottom: 8px;
-  font-weight: bold;
+  padding-top: 10px;
+  // color: white;
+  // font-size: 16px;
+  // padding-bottom: 8px;
+  // font-weight: bold;
 }
+// :host {
+//   display: block;
+// }
+// .label {
+//   // padding: 20px 0px;
+//   color: white;
+//   font-size: 16px;
+//   padding-bottom: 8px;
+//   font-weight: bold;
+// }
 
-app-select-options {
-  margin: 0px 12px 15px 12px;
-}
-input {
-  margin: 0px 12px 15px 12px;
-  padding: 0px 4px;
-  height: 25px;
-  width: 90%;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  &:focus {
-    outline: none;
-  }
-}
+// dx-select-box,
+// dx-text-box {
+//   margin: 0px 12px 15px 12px;
+// }
+// input {
+//   margin: 0px 12px 15px 12px;
+//   padding: 0px 4px;
+//   height: 25px;
+//   width: 90%;
+//   border: 1px solid #ccc;
+//   border-radius: 4px;
+//   &:focus {
+//     outline: none;
+//   }
+// }
+// #tabPanel {
+//   height: 250px;
+//   width: 100%;
+// }

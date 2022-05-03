@@ -1,13 +1,74 @@
 <!-- <app-concrete-options></app-concrete-options> -->
+<app-input-options
+  type="select"
+  [(option)]="shearReinforcement"
+  [options]="rebarOptions"
+  label="Diameter of Shear Reinfocement:"
+></app-input-options>
+<div class="dx-fieldset">
+  <div class="dx-field">
+    <div class="dx-field-label">Default mode</div>
+    <div class="dx-field-value">
+      <dx-select-box
+        #selectBox
+        class="select"
+        [items]="rebarOptions"
+        [(value)]="shearReinforcement"
+      >
+        <!-- <dxo-drop-down-options [height]="140"></dxo-drop-down-options -->
+        ></dx-select-box
+      >
+    </div>
+  </div>
+</div>
+<app-viewport title="{{ title }}">
+  <div class="title">Input</div>
+  <div class="contents">
+    <div class="input">
+      <div class="group-items">
+        <app-dimensions></app-dimensions>
+      </div>
+      <div class="group-items">
+        <app-cover></app-cover>
+      </div>
+    </div>
+  </div>
+</app-viewport>
+
 <button (click)="addNewMaterialPopup.toggle()">Click Me</button>
 <app-add-new-material
   #addNewMaterialPopup
   (submit)="saveValues($event); addNewMaterialPopup.close()"
 ></app-add-new-material>
+<!-- <app-cover></app-cover>
+<div class="dx-field-value">
+  <dx-number-box [value]="14500.55" [showClearButton]="true">
+    <dxi-button
+      name="currency"
+      location="after"
+      [options]="currencyButton"
+    ></dxi-button>
+    <dxi-button name="clear"></dxi-button>
+    <dxi-button name="spins"></dxi-button>
+  </dx-number-box>
+</div>
 <app-viewport title="{{ title }}">
   <app-title-box title="Section Properties:">
     <div class="contents">
       <div class="left-content">
+        <div class="test-box">
+          <div class="header">
+            <div>Dimensions</div>
+            <div class="check">
+              <app-spread-footing
+                [(value)]="sectionType"
+                [options]="sectionOptions"
+              ></app-spread-footing>
+            </div>
+          </div>
+
+          <div *ngIf="sectionType === 'Wide flanges'">sdsdsd</div>
+        </div>
         <app-title-box
           title="Dimensions"
           [(value)]="sectionType"
@@ -207,4 +268,4 @@
       </div>
     </div>
   </app-title-box>
-</app-viewport>
+</app-viewport> -->

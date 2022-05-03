@@ -1,31 +1,80 @@
 <div class="labels" *ngIf="label">{{ label }}</div>
-<input
-  *ngIf="type != 'fixed' && type != 'select'"
-  type="{{ type }}"
-  placeholder="{{ placeholder }}"
-  [(ngModel)]="value"
-  (ngModelChange)="valueChange.emit(value)"
-  [style.height]="height"
-  [style.width]="width"
-/>
 <div
-  *ngIf="type === 'fixed'"
-  class="fixed"
-  [style.height]="height"
-  [style.width]="width"
->
-  {{ value }}
-</div>
-<select
-  *ngIf="type === 'select'"
   class="input"
-  [(ngModel)]="value"
-  (ngModelChange)="valueChange.emit(value)"
-  [style.height]="height"
+  *ngIf="type === 'number'"
   [style.width]="width"
+  [style.height]="height"
 >
-  <option *ngFor="let option of options" [value]="option">{{ option }}</option>
-</select>
-<div class="placeholder" *ngIf="!value && type === 'select'">
-  {{ "--- select ---" }}
+  <dx-number-box
+    [(value)]="value"
+    (valueChange)="valueChange.emit(value)"
+    [showClearButton]="true"
+    placeholder="{{ placeholder }}"
+  >
+    <dx-validator>
+      <dxi-validation-rule type="required"></dxi-validation-rule>
+    </dx-validator>
+    <dxi-button
+      name="nextDate"
+      location="app-popup-form"
+      [options]="currencyButton"
+    ></dxi-button>
+    <dxi-button name="clear"></dxi-button>
+  </dx-number-box>
+</div>
+<div
+  class="fixed"
+  *ngIf="type === 'fixed'"
+  [style.width]="width"
+  [style.height]="height"
+>
+  <dx-number-box
+    [(value)]="value"
+    (valueChange)="valueChange.emit(value)"
+    [disabled]="true"
+    placeholder="{{ placeholder }}"
+  >
+    <dxi-button
+      name="currency"
+      location="after"
+      [options]="currencyButton"
+    ></dxi-button>
+  </dx-number-box>
+</div>
+<div
+  class="select"
+  *ngIf="type === 'select'"
+  [style.width]="width"
+  [style.height]="height"
+>
+  <dx-select-box
+    #selectBox
+    class="select"
+    [items]="options"
+    [(value)]="option"
+    (valueChange)="valueChange.emit(value)"
+  >
+    <dxo-drop-down-options [maxHeight]="140"></dxo-drop-down-options
+  ></dx-select-box>
+</div>
+<div
+  class="text"
+  *ngIf="type === 'text'"
+  [style.width]="width"
+  [style.height]="height"
+>
+  <dx-text-box
+    [value]="text!"
+    [(text)]="text"
+    (textChange)="textChange.emit(text)"
+    placeholder="{{ placeholder }}"
+  ></dx-text-box>
+</div>
+<div
+  class="add-button"
+  *ngIf="type === 'addButton'"
+  [style.width]="width"
+  [style.height]="height"
+>
+  <div>{{ button }}</div>
 </div>

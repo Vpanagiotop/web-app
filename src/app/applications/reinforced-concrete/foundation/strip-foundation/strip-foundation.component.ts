@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
+import { Product, ProductsService } from './test';
 @Component({
   selector: 'app-strip-foundation',
   templateUrl: './strip-foundation.component.html',
   styleUrls: ['./strip-foundation.component.scss']
 })
-export class StripFoundationComponent implements OnInit {
+export class StripFoundationComponent {
+  products: Product[];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(service: ProductsService) {
+    this.products = service.getProducts();
   }
 
 }
