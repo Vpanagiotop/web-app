@@ -139,7 +139,7 @@ export class ConcreteComponent implements OnInit {
     this.assignCompresiveStrain();
 
   }
-  public defauleValues() {
+  public defaultValues() {
     this.modulusofElasticity();
     this.compresiveStrain();
   }
