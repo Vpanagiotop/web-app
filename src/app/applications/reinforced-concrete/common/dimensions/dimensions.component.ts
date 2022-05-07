@@ -6,10 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./dimensions.component.scss']
 })
 export class DimensionsComponent {
-
-  public title = "Flexural Design of Reinforced Concrete Beam"
-  public sectionOptions = ['Rectangular', 'Wide flanges'];
-  @Input() public sectionType: 'Rectangular' | 'Wide flanges' = 'Rectangular';
+  @Input() element!: 'beam' | 'column'
+  public beamOptions = ['Rectangular', 'Wide flanges'];
+  @Input() public beamType: 'Rectangular' | 'Wide flanges' = 'Rectangular';
   @Input() inputWidth: string = '140px';
   @Input() hb!: number;
   @Input() bw!: number;
@@ -18,4 +17,9 @@ export class DimensionsComponent {
   public beff() {
     return (+this.beff_left || 0) + (+this.beff_right || 0) + (+this.bw || 0);
   }
+  @Input() cy!: number;
+  @Input() cx!: number;
+  @Input() D!: number;
+  public columnOptions = ['Rectangular', 'Circular'];
+  @Input() public columnType: 'Rectangular' | 'Circular' = 'Rectangular';
 }

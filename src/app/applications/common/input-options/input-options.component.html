@@ -1,80 +1,43 @@
 <div class="labels" *ngIf="label">{{ label }}</div>
-<div
-  class="input"
-  *ngIf="type === 'number'"
-  [style.width]="width"
-  [style.height]="height"
->
+<div class="input" [style.width]="width" [style.height]="height">
   <dx-number-box
+    *ngIf="type === 'number'"
     [(value)]="value"
     (valueChange)="valueChange.emit(value)"
-    [showClearButton]="true"
+    [disabled]="disable"
+    [showClearButton]="clearButton"
     placeholder="{{ placeholder }}"
+    [min]="0"
   >
     <dx-validator>
       <dxi-validation-rule type="required"></dxi-validation-rule>
     </dx-validator>
     <dxi-button
-      name="nextDate"
+      *ngIf="units"
+      name="units"
       location="app-popup-form"
-      [options]="currencyButton"
+      [text]="units"
+      [options]="unitsButton"
     ></dxi-button>
     <dxi-button name="clear"></dxi-button>
   </dx-number-box>
-</div>
-<div
-  class="fixed"
-  *ngIf="type === 'fixed'"
-  [style.width]="width"
-  [style.height]="height"
->
-  <dx-number-box
-    [(value)]="value"
-    (valueChange)="valueChange.emit(value)"
-    [disabled]="true"
-    placeholder="{{ placeholder }}"
-  >
-    <dxi-button
-      name="currency"
-      location="after"
-      [options]="currencyButton"
-    ></dxi-button>
-  </dx-number-box>
-</div>
-<div
-  class="select"
-  *ngIf="type === 'select'"
-  [style.width]="width"
-  [style.height]="height"
->
-  <dx-select-box
-    #selectBox
-    class="select"
-    [items]="options"
-    [(value)]="option"
-    (valueChange)="valueChange.emit(value)"
-  >
-    <dxo-drop-down-options [maxHeight]="140"></dxo-drop-down-options
-  ></dx-select-box>
-</div>
-<div
-  class="text"
-  *ngIf="type === 'text'"
-  [style.width]="width"
-  [style.height]="height"
->
   <dx-text-box
+    *ngIf="type === 'text'"
     [value]="text!"
     [(text)]="text"
     (textChange)="textChange.emit(text)"
+    [disabled]="disable"
+    [showClearButton]="clearButton"
     placeholder="{{ placeholder }}"
   ></dx-text-box>
-</div>
-<div
-  class="add-button"
-  *ngIf="type === 'addButton'"
-  [style.width]="width"
-  [style.height]="height"
->
-  <div>{{ button }}</div>
+  <dx-select-box
+    #selectBox
+    *ngIf="type === 'select'"
+    class="select"
+    [items]="options"
+    [(value)]="option"
+    (valueChange)="optionChange.emit(option)"
+  >
+    <dxo-drop-down-options [maxHeight]="140"></dxo-drop-down-options
+  ></dx-select-box>
 </div>

@@ -6,27 +6,11 @@
 .labels {
   width: fit-content;
 }
-.input {
-  width: 200px;
-}
+
 .select {
   height: 100%;
 }
-.add-button {
-  font-size: 13px;
-  justify-content: flex-start;
-  display: flex;
-  align-items: center;
-  background-color: #2a2a2a;
-  padding: 0px 8px;
-  border-radius: 5px;
-  box-sizing: border-box;
-  border: 1px solid #4d4d4d;
-  cursor: pointer;
-  &:hover {
-    border: 1px solid rgba(28, 168, 221, 0.4);
-  }
-}
+
 dx-number-box {
   width: 100%;
   height: 100%;
@@ -36,4 +20,27 @@ dx-text-box {
   width: 100%;
   height: 100%;
   padding: 0px;
+}
+::ng-deep .dx-placeholder,
+::ng-deep .dx-texteditor-input-container {
+  display: flex;
+  align-items: center;
+}
+::ng-deep .dx-button-has-text .dx-button-content {
+  padding: 0px;
+}
+::ng-deep.dx-show-clear-button ::ng-deep.dx-clear-button-area {
+  width: fit-content;
+  min-width: 20px;
+}
+::ng-deep.dx-show-clear-button ::ng-deep.dx-icon-clear {
+  font-size: 16px;
+  margin: 0px;
+  top: 0%;
+  padding: 0px;
+  height: 100%;
+  width: fit-content;
+  min-width: fit-content;
+  display: flex;
+  align-items: center;
 }

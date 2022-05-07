@@ -1,16 +1,17 @@
 <app-title-box
+  *ngIf="element === 'beam'"
   title="Dimentions"
-  [(value)]="sectionType"
-  [options]="sectionOptions"
-  minWidth="400px"
+  [(value)]="beamType"
+  [options]="beamOptions"
 >
-  <div *ngIf="sectionType === 'Rectangular'">
+  <div *ngIf="beamType === 'Rectangular'">
     <app-input-options
       type="number"
       [(value)]="hb"
       label="Section height:"
       width="{{ inputWidth }}"
       placeholder="hb"
+      units="m"
     ></app-input-options>
     <app-input-options
       type="number"
@@ -18,15 +19,17 @@
       label="Section width:"
       width="{{ inputWidth }}"
       placeholder="bw"
+      units="m"
     ></app-input-options>
   </div>
-  <div *ngIf="sectionType === 'Wide flanges'">
+  <div *ngIf="beamType === 'Wide flanges'">
     <app-input-options
       type="number"
       [(value)]="hb"
       label="Section height:"
       width="{{ inputWidth }}"
       placeholder="hb"
+      units="m"
     ></app-input-options>
     <app-input-options
       type="number"
@@ -34,6 +37,7 @@
       label="Section width:"
       width="{{ inputWidth }}"
       placeholder="bw"
+      units="m"
     ></app-input-options>
     <app-input-options
       type="number"
@@ -41,6 +45,7 @@
       label="Left flange width:"
       width="{{ inputWidth }}"
       placeholder="beff,l"
+      units="m"
     ></app-input-options>
     <app-input-options
       type="number"
@@ -48,13 +53,51 @@
       label="Right flange width:"
       width="{{ inputWidth }}"
       placeholder="beff,r"
+      units="m"
     ></app-input-options>
     <app-input-options
-      type="fixed"
+      type="number"
+      [disable]="true"
       [value]="beff()"
       label="Effective flange:"
       width="{{ inputWidth }}"
       placeholder="beff"
+      units="m"
+    ></app-input-options>
+  </div>
+</app-title-box>
+<app-title-box
+  *ngIf="element === 'column'"
+  title="Dimentions"
+  [(value)]="columnType"
+  [options]="columnOptions"
+>
+  <div *ngIf="columnType === 'Rectangular'">
+    <app-input-options
+      type="number"
+      [(value)]="cx"
+      label="Section height:"
+      width="{{ inputWidth }}"
+      placeholder="cx"
+      units="m"
+    ></app-input-options>
+    <app-input-options
+      type="number"
+      [(value)]="cy"
+      label="Section width:"
+      width="{{ inputWidth }}"
+      placeholder="cy"
+      units="m"
+    ></app-input-options>
+  </div>
+  <div *ngIf="columnType === 'Circular'">
+    <app-input-options
+      type="number"
+      [(value)]="D"
+      label="Diameter:"
+      width="{{ inputWidth }}"
+      placeholder="D"
+      units="m"
     ></app-input-options>
   </div>
 </app-title-box>

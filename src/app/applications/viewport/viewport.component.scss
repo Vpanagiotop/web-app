@@ -1,7 +1,7 @@
 :host {
   display: block;
   width: 100%;
-  min-width: 280px;
+  min-width: fit-content;
 }
 
 .breadcrumbs {
@@ -11,15 +11,17 @@
   border-bottom: 1px solid rgb(68, 64, 64);
 }
 .headline {
-  background-color: #ebeef1;
+  // background-color: #ebeef1;;
+  background-color: #2a2a2a;
+  color: aliceblue;
   display: flex;
   padding: 10px 0px;
   font-size: 22px;
-  // background-color: #363636;
-  // color: #ffffffee;
   img {
     width: 90px;
     height: 100%;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(228deg)
+      brightness(100%) contrast(80%);
   }
   .description {
     display: block;
@@ -31,15 +33,13 @@
     .info {
       position: absolute;
       bottom: 0px;
-      color: #5e5858;
+      color: white;
       font-size: 14px;
     }
   }
 }
 .contents {
   display: block;
-  background-color: #ebeef1;
+  background-color: #2a2a2a;
   padding: 20px;
-  // background-color: #363636;
-  // color: #ffffffee;
 }

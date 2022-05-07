@@ -9,6 +9,7 @@
   color: white;
   padding: 5px;
   border-radius: 4px 4px 0px 0px;
+  height: 30px;
   .label {
     padding-right: 5px;
   }
@@ -22,12 +23,4 @@
   border-radius: 0px 0px 4px 4px;
   color: white;
   background-color: #2a2a2a;
-}
-::ng-deep .dx-placeholder,
-::ng-deep .dx-texteditor-input-container {
-  display: flex;
-  align-items: center;
-}
-::ng-deep .dx-button-has-text .dx-button-content {
-  padding: 0px;
 }

@@ -18,9 +18,16 @@
   </div>
 </app-viewport> -->
 <app-viewport title="{{ title }}">
-  <app-dimensions></app-dimensions>
-  <app-cover></app-cover>
-  <app-materials></app-materials>
+  <div class="contents">
+    <div class="left-input">
+      <app-dimensions></app-dimensions>
+      <app-cover></app-cover>
+      <app-materials></app-materials>
+    </div>
+    <div class="right-input">
+      <app-materials></app-materials>
+    </div>
+  </div>
   <!-- <app-strip-foundation></app-strip-foundation> -->
 </app-viewport>
 

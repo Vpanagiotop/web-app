@@ -14,9 +14,10 @@
         <div class="items">
           <app-input-options
             label="Material Type"
-            type="fixed"
+            type="text"
+            [disable]="true"
             width="150px"
-            (click)="test()"
+            [text]="data.materialOutput.material"
           ></app-input-options>
           <app-input-options
             label="Material Name"
@@ -25,16 +26,11 @@
             width="150px"
           ></app-input-options>
           <app-input-options
-            type="fixed"
             label="Weight per Unit Volume"
-            [(value)]="fck!"
+            type="number"
+            [(value)]="WeightperUnit"
             width="150px"
-          ></app-input-options>
-          <app-input-options
-            type="fixed"
-            label="Weight per Unit Volume"
-            [(value)]="fck!"
-            width="150px"
+            units="MPa"
           ></app-input-options>
           <app-input-options
             type="select"
@@ -44,6 +40,18 @@
             width="150px"
             height="25px"
           ></app-input-options>
+          <app-input-options
+            label="Partial factor"
+            type="number"
+            [(value)]="partialFactor"
+            width="150px"
+          ></app-input-options>
+          <app-input-options
+            label="Factor consdering longterm effects"
+            type="number"
+            [(value)]="longtermFactor"
+            width="150px"
+          ></app-input-options>
         </div>
       </dxi-item>
       <dxi-item title="Properties" icon="edit">
@@ -51,36 +59,60 @@
           <app-input-options
             type="number"
             label="Compresive Strength of Concrete"
-            [(value)]="fck"
+            [(value)]="data.properties.fck"
             width="150px"
+            units="MPa"
           ></app-input-options>
           <app-input-options
             type="number"
             label="Mean Cylinder Compresive Strength"
             [(value)]="data.properties.fcm"
             width="150px"
+            units="MPa"
           ></app-input-options>
           <app-input-options
             type="number"
             label="Modulus of Elasticity"
-            [(value)]="fck"
+            [(value)]="concreteProperties.Ecm"
             width="150px"
+            units="MPa"
           ></app-input-options>
           <app-input-options
             type="number"
-            label="Poison"
-            [(value)]="fck"
+            label="Poison's ratio"
+            [(value)]="data.properties.v"
             width="150px"
           ></app-input-options>
           <app-input-options
             type="number"
             label="Shear Modulus"
-            [(value)]="fck"
+            [value]="shearModulus()"
+            [disable]="true"
             width="150px"
+            units="MPa"
           ></app-input-options>
         </div>
       </dxi-item>
-      <dxi-item title="Advanced" icon="edit"></dxi-item>
+      <dxi-item title="Advanced" icon="more">
+        <div class="items">
+          <app-input-options
+            type="select"
+            label="Stress - Strain Relations"
+            [options]="stressStrainOptions"
+            [(option)]="stressStrainOption"
+            (click)="test()"
+            width="170px"
+          ></app-input-options>
+          <app-input-options
+            *ngIf="stressStrainOption === 'Schematic'"
+            type="number"
+            label="Shear Modulus"
+            [(value)]="fck"
+            width="150px"
+            units="MPa"
+          ></app-input-options>
+        </div>
+      </dxi-item>
     </dx-tab-panel>
   </div>
   <!-- <div class="panel" *ngFor="let item of concreteProperties">

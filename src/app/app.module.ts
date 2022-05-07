@@ -13,12 +13,14 @@ import { TitleBoxComponent } from './applications/common/title-box/title-box.com
 import { ContentsComponent } from './applications/contents/contents.component';
 import { AddNewMaterialComponent } from './applications/materials/add-new-material/add-new-material.component';
 import { ConcreteOptionsComponent } from './applications/materials/concrete-options/concrete-options.component';
+import { ConcreteComponent } from './applications/materials/concrete/concrete.component';
 import { OptimizationContentsComponent } from './applications/optimization/optimization-contents/optimization-contents.component';
 import { OptimizationViewportComponent } from './applications/optimization/optimization-viewport/optimization-viewport.component';
 import { CoverComponent } from './applications/reinforced-concrete/common/cover/cover.component';
 import { DimensionsComponent } from './applications/reinforced-concrete/common/dimensions/dimensions.component';
 import { MaterialsComponent } from './applications/reinforced-concrete/common/materials/materials.component';
 import { FlexuralDesignRCBeamComponent } from './applications/reinforced-concrete/cross-section-analysis/flexural-design-rc-beam/flexural-design-rc-beam.component';
+import { FlexuralDesignRcColumnComponent } from './applications/reinforced-concrete/cross-section-analysis/flexural-design-rc-column/flexural-design-rc-column.component';
 import { SpreadFootingComponent } from './applications/reinforced-concrete/foundation/spread-footing/spread-footing.component';
 import { StripFoundationComponent } from './applications/reinforced-concrete/foundation/strip-foundation/strip-foundation.component';
 import { ReinforcedConcreteContentsComponent } from './applications/reinforced-concrete/reinforced-concrete-contents/reinforced-concrete-contents.component';
@@ -58,6 +60,8 @@ import { SelectOptionsComponent } from './select-options/select-options.componen
     CoverComponent,
     DimensionsComponent,
     MaterialsComponent,
+    FlexuralDesignRcColumnComponent,
+    ConcreteComponent
 
   ],
   imports: [

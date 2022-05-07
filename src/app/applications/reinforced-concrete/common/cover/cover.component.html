@@ -1,9 +1,4 @@
-<app-title-box
-  title="Cover"
-  [(value)]="cover"
-  [options]="coverOptions"
-  minWidth="400px"
->
+<app-title-box title="Cover" [(value)]="cover" [options]="coverOptions">
   <div *ngIf="cover === 'Nominal cover'">
     <app-input-options
       type="number"
@@ -11,6 +6,7 @@
       label="Nominal cover:"
       width="{{ inputWidth }}"
       placeholder="cnom"
+      units="m"
     ></app-input-options>
     <app-input-options
       type="select"

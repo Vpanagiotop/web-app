@@ -1,1 +1,138 @@
-<p>concrete works!</p>
+<app-viewport title="{{ title }}">
+  <div class="contents">
+    <div class="left-input">
+      <div class="header">General</div>
+      <div class="properties">
+        <app-input-options
+          label="Material Type"
+          type="text"
+          [disable]="true"
+          width="150px"
+          [text]="'Concrete'"
+        ></app-input-options>
+        <app-input-options
+          label="Material Name"
+          [(text)]="concreteProperties.name"
+          type="text"
+          width="150px"
+          placeholder="Name"
+        ></app-input-options>
+        <app-input-options
+          label="Weight per Unit Volume"
+          type="number"
+          [(value)]="WeightperUnit"
+          width="150px"
+        ></app-input-options>
+        <app-input-options
+          type="select"
+          [options]="unitsOptions"
+          [(option)]="units"
+          label="Units"
+          width="150px"
+          height="25px"
+        ></app-input-options>
+      </div>
+      <div class="header">Stress - Strain Relations</div>
+      <div class="properties">
+        <div class="row1" *ngFor="let item of strainRelations">
+          <div class="col1">{{ item.title }}</div>
+          <div class="col2">
+            <div class="row0">
+              <div class="row2">
+                <span
+                  >ε<sub>c{{ item.subscript }} </sub></span
+                >
+              </div>
+              <div class="row2">
+                <span
+                  >ε<sub>cu{{ item.subscript }}</sub></span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col3">
+            <div class="row0">
+              <div class="row2" *ngFor="let contents of item.ec">
+                <dx-number-box
+                  height="18px"
+                  width="90%"
+                  [elementAttr]="{ class: 'class-name' }"
+                  [showClearButton]="true"
+                  [min]="0"
+                  format="#.##"
+                  [(value)]="contents.value"
+                >
+                  <dxi-button
+                    name="units"
+                    [text]="strain"
+                    [options]="strainButtom"
+                  ></dxi-button
+                ></dx-number-box>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right-input">
+      <div class="header">Properties</div>
+      <div class="properties">
+        <app-input-options
+          type="number"
+          label="Compresive Strength of Concrete"
+          [(value)]="concreteProperties.fck"
+          width="150px"
+          units="MPa"
+        ></app-input-options>
+        <app-input-options
+          type="number"
+          label="Mean Cylinder Compresive Strength"
+          [(value)]="concreteProperties.fcm"
+          width="150px"
+          units="MPa"
+        ></app-input-options>
+        <app-input-options
+          type="number"
+          label="Modulus of Elasticity"
+          [(value)]="concreteProperties.Ecm"
+          width="150px"
+          units="MPa"
+        ></app-input-options>
+        <app-input-options
+          type="number"
+          label="Poison's ratio"
+          [(value)]="concreteProperties.v"
+          width="150px"
+        ></app-input-options>
+        <app-input-options
+          type="number"
+          [disable]="true"
+          label="Shear Modulus"
+          [value]="shearModulus()"
+          width="150px"
+          units="MPa"
+        ></app-input-options>
+        <div class="label">Safty factors</div>
+        <div class="properties">
+          <app-input-options
+            type="number"
+            label="Partial factor"
+            [(value)]="concreteProperties.partialFactor"
+            width="120px"
+          ></app-input-options>
+          <app-input-options
+            (click)="test()"
+            type="number"
+            label="Factor consdering longterm effects"
+            [(value)]="longTermFactor"
+            width="120px"
+          ></app-input-options>
+          <div class="test"></div>
+        </div>
+        <div class="options">
+          <button (click)="defauleValues()">click me</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-viewport>

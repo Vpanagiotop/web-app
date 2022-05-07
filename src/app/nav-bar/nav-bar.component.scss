@@ -1,42 +1,42 @@
-:host{
-    display: block;
-    overflow: visible;
-    box-shadow: inset rgb(0 0 0) 0px -10px 13px -11px;
-    background-color: #333333;
-    color: white;
+:host {
+  display: block;
+  overflow: visible;
+  box-shadow: inset #e6e6e6 0px -3px 6px -7px;
+  background-color: #252525;
+  color: white;
 }
-.outer{
-    padding: 30px 0px 10px 0px;
-    margin: 0px 20px;
+.outer {
+  padding: 30px 0px 10px 0px;
+  margin: 0px 20px;
 }
-.menu{
-    display: flex;
-    justify-content: space-between;
+.menu {
+  display: flex;
+  justify-content: space-between;
 }
-.item{
-    float: left;
-    margin: 0px 10px;
-    padding: 5px 0px;
-    
-    &:hover{
-        color: rgb(112, 104, 104);
-        cursor: pointer;
-    }
-}
-.log-in{
-    color: white;
-    background-color:#3a789e;
-    display: flex;
+.item {
+  float: left;
+  margin: 0px 10px;
+  padding: 5px 0px;
+
+  &:hover {
+    color: rgb(112, 104, 104);
     cursor: pointer;
-    border: 0px solid black;
-    margin: 0px 10px;
-    font-size: 16px;
-    border-radius: 1px;
-    padding: 5px 20px;
-    &:hover {
-        box-shadow: inset 0px 0px 5px 1px #4d4c4cba;
-    }
+  }
 }
-.nav-right{
-    display: flex;
+.log-in {
+  color: white;
+  background-color: #3a789e;
+  display: flex;
+  cursor: pointer;
+  border: 0px solid black;
+  margin: 0px 10px;
+  font-size: 16px;
+  border-radius: 1px;
+  padding: 5px 20px;
+  &:hover {
+    box-shadow: inset 0px 0px 5px 1px #4d4c4cba;
+  }
+}
+.nav-right {
+  display: flex;
 }

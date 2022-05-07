@@ -1,71 +1,37 @@
-<div class="box">
-  <app-title-box title="Materials">
-    <div class="header">
-      <div class="label">Concrete</div>
-      <dx-drop-down-button
-        icon="plus"
-        height="25px"
-        [showArrowIcon]="false"
-        [dropDownOptions]="{ width: 150 }"
-        [items]="options"
-        displayExpr="name"
-        (onItemClick)="plusClick($event)"
+<app-title-box title="Materials">
+  <div class="material">
+    <div class="label">Concrete</div>
+    <dx-drop-down-button
+      text="Add Material"
+      height="30px"
+      [showArrowIcon]="false"
+      [dropDownOptions]="{ width: 150 }"
+      displayExpr="name"
+      [disabled]="disable"
+    >
+      <dxi-item
+        name="Eurocode Standards"
         (click)="addNewConcreteMaterialPopup.toggle()"
+        >Eurocode Standards</dxi-item
       >
-      </dx-drop-down-button>
-      <!-- <dx-drop-down-button
-        *ngIf="data?.materialOutput"
-        icon="plus"
-        height="25px"
-        [showArrowIcon]="false"
-        [dropDownOptions]="{ width: 150 }"
-        [items]="options"
-        displayExpr="name"
-        [disabled]="true"
-        (onItemClick)="plusClick($event)"
-        (click)="addNewConcreteMaterialPopup.toggle()"
-      >
-      </dx-drop-down-button> -->
-    </div>
-    <div class="container" *ngIf="data">
-      <div class="input">
-        <div class="title">Name:</div>
-        <dx-text-box
-          [disabled]="true"
-          height="25px"
-          width="120px"
-          value="{{ data.materialOutput.value }}"
-        ></dx-text-box>
+      <dxi-item name="Saved Materials">Saved Materials</dxi-item>
+    </dx-drop-down-button>
+  </div>
+  <div class="contents" *ngIf="concreteMaterial">
+    <div class="material-info">
+      <div class="info">
+        <div class="name">
+          {{ concreteMaterial.materialOutput.value }}
+          <div class="modified">modified</div>
+        </div>
+        <div class="test">Eurocode Standards</div>
       </div>
-      <div class="input">
-        <div class="title">fck:</div>
-        <dx-text-box
-          [disabled]="true"
-          height="25px"
-          width="120px"
-          value="{{ data.properties.fck }}"
-        >
-          <dxi-button name="units" location="after" [options]="unitsButton">
-          </dxi-button>
-        </dx-text-box>
-      </div>
-      <div class="input">
-        <div class="title">Partial factor:</div>
-        <dx-number-box [value]="1.5" height="25px" width="120px">
-        </dx-number-box>
-      </div>
-      <div class="input">
-        <div class="title">Coefficient αcc:</div>
-        <dx-number-box [value]="0.85" height="25px" width="120px">
-        </dx-number-box>
-      </div>
-
       <div class="buttons">
         <dx-button
+          (click)="concrete.toggle()"
           stylingMode="text"
           type="default"
           icon="edit"
-          (click)="concrete.toggle()"
         ></dx-button>
         <dx-button
           (submit)="deleteMat()"
@@ -75,34 +41,35 @@
           (click)="deletePopup.toggle()"
         ></dx-button>
       </div>
-      <app-concrete-options
-        #concrete
-        Name="{{ data.materialOutput.value }}"
-        [properties]="data.properties"
-        [data]="data"
-        [fck]="data.properties.fck"
-      ></app-concrete-options>
     </div>
+    <app-concrete-options
+      #concrete
+      Name="{{ concreteMaterial.materialOutput.value }}"
+      [properties]="concreteMaterial.properties"
+      [data]="concreteMaterial"
+      [fck]="concreteMaterial.properties.fck"
+    ></app-concrete-options>
+  </div>
 
-    <app-add-new-material
-      #addNewConcreteMaterialPopup
-      type="Concrete"
-      (submit)="saveValues($event); addNewConcreteMaterialPopup.close()"
-    ></app-add-new-material>
+  <app-add-new-material
+    #addNewConcreteMaterialPopup
+    type="Concrete"
+    (submit)="saveValues($event); addNewConcreteMaterialPopup.close()"
+  ></app-add-new-material>
 
-    <app-add-new-material
-      #deletee
-      type="Concrete"
-      (submit)="saveValues($event); addNewConcreteMaterialPopup.reset()"
-    ></app-add-new-material>
+  <app-add-new-material
+    #deletee
+    type="Concrete"
+    (submit)="saveValues($event); addNewConcreteMaterialPopup.reset()"
+  ></app-add-new-material>
 
-    <app-add-new-material
-      #addNewSteelMaterialPopup
-      type="Steel"
-      (submit)="saveValues($event); addNewSteelMaterialPopup.close()"
-    ></app-add-new-material>
-  </app-title-box>
-</div>
+  <app-add-new-material
+    #addNewSteelMaterialPopup
+    type="Steel"
+    (submit)="saveValues($event); addNewSteelMaterialPopup.close()"
+  ></app-add-new-material>
+</app-title-box>
+
 <app-popup-form
   #deletePopup
   type="delete"

@@ -1,10 +1,20 @@
-// .contents {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   background-color: #2a2a2a;
-//   min-width: fit-content;
-// }
+.contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #252525;
+  min-width: fit-content;
+}
+.left-input {
+  padding: 15px;
+  width: 50%;
+  min-width: 400px;
+}
+.right-input {
+  padding: 15px 15px 15px 0px;
+  min-width: 400px;
+  width: 50%;
+}
 // .title {
 //   background-color: #424040;
 //   color: white;
@@ -18,3 +28,8 @@
 // .group-items {
 //   padding: 5px;
 // }
+app-dimensions,
+app-cover,
+app-materials {
+  padding: 7px 0px;
+}
