@@ -25,18 +25,18 @@ export class ConcreteComponent implements OnInit {
   public concreteProperties: IConcreteProperties = {
     name: this.Name,
     weight: this.WeightperUnit,
-    fck: undefined as any as number,
-    fcm: undefined as any as number,
-    Ecm: undefined as any as number,
+    fck: NaN,
+    fcm: NaN,
+    Ecm: NaN,
     v: this.v,
     G: 20,
     partialFactor: 1.5,
-    dc1: undefined as any as number,
-    dcu1: undefined as any as number,
-    dc2: undefined as any as number,
-    dcu2: undefined as any as number,
-    dc3: undefined as any as number,
-    dcu3: undefined as any as number
+    dc1: NaN,
+    dcu1: NaN,
+    dc2: NaN,
+    dcu2: NaN,
+    dc3: NaN,
+    dcu3: NaN
   }
   public ngOnInit() {
     // this.concreteProperties.fck = 20
