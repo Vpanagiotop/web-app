@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-concrete',
@@ -7,75 +7,38 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ConcreteComponent implements OnInit {
   public title = "Concrete"
-  @Input() public Name: string = '';
-  @Input() public WeightperUnit: number = 25;
-  @Input() public fck!: number;
-  @Input() public fcm!: number;
-  @Input() public Ecm!: number;
-  @Input() public v: number = 0.2;
-  @Input() public dc1!: number;
-  @Input() public dcu1!: number;
-  @Input() public dc2!: number;
-  @Input() public dcu2!: number;
-  @Input() public dc3!: number;
-  @Input() public dcu3!: number;
-  @Input() public partialFactor: number = 1.5;
-  @Input() public longTermFactor: number = 0.85;
+  public Name = '';
+  public WeightperUnit = 25;
+  public v = 0.2;
+  public longTermFactor = 0.85;
   public shearModulus() {
     return Math.round(+this.concreteProperties.Ecm / (2 * (+this.concreteProperties.v + 1)));
   }
   public units = 'kN, m';
-  public unitsOptions: string[] = ['kN, m', 'N, mm'];
+  public unitsOptions = ['kN, m', 'N, mm'];
   public strain = '‰';
   public strainButtom = {
     text: this.strain,
     stylingMode: 'text',
-    width: 30,
-
+    width: 30
   }
-
-
-  constructor() { }
-
-  // public ngOnInit() {
-  //   // this.concreteProperties.fck = 20
-  // }
-  public concreteProperties: {
-    type: string;
-    name: string;
-    weight: number;
-    fck: number;
-    fcm: number;
-    Ecm: number;
-    v: number;
-    G: number;
-    partialFactor: number;
-    dc1: number;
-    dcu1: number;
-    dc2: number;
-    dcu2: number;
-    dc3: number;
-    dcu3: number;
-  } = {
-      type: 'Concrete',
-      name: this.Name,
-      weight: this.WeightperUnit,
-      fck: this.fck,
-      fcm: this.fcm,
-      Ecm: this.Ecm,
-      v: this.v,
-      G: 20,
-      partialFactor: this.partialFactor,
-      dc1: this.dc1,
-      dcu1: this.dcu1,
-      dc2: this.dc2,
-      dcu2: this.dcu2,
-      dc3: this.dc3,
-      dcu3: this.dcu3
-    }
-
+  public concreteProperties: IConcreteProperties = {
+    name: this.Name,
+    weight: this.WeightperUnit,
+    fck: undefined as any as number,
+    fcm: undefined as any as number,
+    Ecm: undefined as any as number,
+    v: this.v,
+    G: 20,
+    partialFactor: 1.5,
+    dc1: undefined as any as number,
+    dcu1: undefined as any as number,
+    dc2: undefined as any as number,
+    dcu2: undefined as any as number,
+    dc3: undefined as any as number,
+    dcu3: undefined as any as number
+  }
   public ngOnInit() {
-
     // this.concreteProperties.fck = 20
   }
   public strainRelations = [
@@ -83,28 +46,27 @@ export class ConcreteComponent implements OnInit {
       title: 'Schematic',
       subscript: '1',
       ec: [
-        { label: 'dc1', value: this.dc1 },
-        { label: 'dcu1', value: this.dcu1 }
+        { label: 'dc1', value: undefined as any as number },
+        { label: 'dcu1', value: undefined as any as number }
       ]
     },
     {
       title: 'Parabola-Rectangle',
       subscript: '2',
       ec: [
-        { label: 'dc2', value: this.dc2 },
-        { label: 'dcu2', value: this.dcu2 }
+        { label: 'dc2', value: undefined as any as number },
+        { label: 'dcu2', value: undefined as any as number }
       ]
     },
     {
       title: 'Bi-linear',
       subscript: '3',
       ec: [
-        { label: 'dc3', value: this.dc3 },
-        { label: 'dcu3', value: this.dcu3 }
+        { label: 'dc3', value: undefined as any as number },
+        { label: 'dcu3', value: undefined as any as number }
       ]
     }
   ]
-
   public test() {
     console.log(this.concreteProperties)
     console.log(this.strainRelations)
@@ -143,4 +105,21 @@ export class ConcreteComponent implements OnInit {
     this.modulusofElasticity();
     this.compresiveStrain();
   }
+}
+
+interface IConcreteProperties {
+  name: string;
+  weight: number;
+  fck: number;
+  fcm: number;
+  Ecm: number;
+  v: number;
+  G: number;
+  partialFactor: number;
+  dc1: number;
+  dcu1: number;
+  dc2: number;
+  dcu2: number;
+  dc3: number;
+  dcu3: number;
 }
